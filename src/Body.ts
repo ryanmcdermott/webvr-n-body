@@ -59,7 +59,7 @@ export class Body {
   }
 
   render() {
-    this.element.setAttribute('position', `${this.rx} ${this.ry} -300`);
+    this.element.setAttribute('position', `${this.rx} ${this.ry} -10`);
   }
 
   in(q: Quad) {

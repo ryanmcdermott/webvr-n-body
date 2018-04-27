@@ -7,10 +7,11 @@ import { BHTree } from './BHTree';
 import { galaxyTemplate } from './galaxy_data/galaxy1';
 
 const DT = 0.1;
-const DEFAULT_Z_INDEX = -300;
-const DEFAULT_BODY_SIZE = 10;
+const DEFAULT_Z_INDEX = -10;
+const DEFAULT_BODY_SIZE = 10000;
 const RADIUS = 2.8e6;
 const bodies = generateBodies();
+console.warn(bodies);
 
 function generateBodies() {
   const arr = [];
@@ -18,14 +19,18 @@ function generateBodies() {
     const b = galaxyTemplate[i];
     const el = document.createElement('a-sphere');
 
+    const rx = b.rx;
+    const ry = b.ry;
+    const vx = b.vx;
+    const vy = b.vy;
     el.setAttribute('color', b.color);
     el.setAttribute('radius', b.DEFAULT_BODY_SIZE);
-    el.setAttribute('position', `${b.rx} ${b.ry} ${DEFAULT_Z_INDEX}`);
+    el.setAttribute('position', `${rx} ${ry} ${DEFAULT_Z_INDEX}`);
 
     const scene = document.getElementById('galaxy-scene');
     scene.appendChild(el);
 
-    const body = new Body(b.rx, b.ry, b.vx, b.vy, b.mass, b.color, el);
+    const body = new Body(rx, ry, vx, vy, b.mass, b.color, el);
     arr.push(body);
   }
 
