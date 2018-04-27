@@ -6,14 +6,6 @@ import { BHTree } from './BHTree';
 
 import { galaxyTemplate } from './galaxy_data/galaxy1';
 
-// const el = document.createElement('a-sphere');
-// el.setAttribute('color', 'yellow');
-// el.setAttribute('radius', '1');
-// el.setAttribute('position', '0 0 -200');
-
-// const scene = document.getElementById('galaxy-scene');
-// scene.appendChild(el);
-
 const DT = 0.1;
 const DEFAULT_Z_INDEX = -300;
 const DEFAULT_BODY_SIZE = 10;
@@ -39,18 +31,6 @@ function generateBodies() {
 
   return arr;
 }
-
-// function tick2() {
-//   const el = document.createElement('a-sphere');
-//   el.setAttribute('color', 'yellow');
-//   el.setAttribute('radius', '10');
-//   const x = -3e2;
-//   const y = 2e3;
-//   el.setAttribute('position', `${x} ${y} ${DEFAULT_Z_INDEX}`);
-//   const scene = document.getElementById('galaxy-scene');
-//   scene.appendChild(el);
-//   //   window.requestAnimationFrame(tick);
-// }
 
 function tick() {
   const quad = new Quad(0, 0, RADIUS);
