@@ -18,7 +18,8 @@ export class Body {
     vx: number,
     vy: number,
     mass: number,
-    color: string
+    color: string,
+    element: Element
   ) {
     this.rx = rx;
     this.ry = ry;
@@ -26,6 +27,7 @@ export class Body {
     this.vy = vy;
     this.mass = mass;
     this.color = color;
+    this.element = element;
   }
 
   update(dt: number) {
@@ -56,7 +58,9 @@ export class Body {
     this.fy += F * dy / dist;
   }
 
-  render() {}
+  render() {
+    this.element.setAttribute('position', `${this.rx} ${this.ry} -300`);
+  }
 
   in(q: Quad) {
     return q.contains(this.rx, this.ry);
@@ -67,6 +71,6 @@ export class Body {
     const x = (this.rx * this.mass + b.rx * b.mass) / m;
     const y = (this.ry * this.mass + b.ry * b.mass) / m;
 
-    return new Body(x, y, this.vx, b.vx, m, this.color);
+    return new Body(x, y, this.vx, b.vx, m, this.color, this.element);
   }
 }
