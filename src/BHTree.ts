@@ -43,10 +43,15 @@ export class BHTree {
   }
 
   putBody(b: Body) {
-    if (b.in(this.quad.NW())) this.NW.insert(b);
-    else if (b.in(this.quad.NE())) this.NE.insert(b);
-    else if (b.in(this.quad.SE())) this.SE.insert(b);
-    else if (b.in(this.quad.SW())) this.SW.insert(b);
+    if (b.in(this.quad.NW())) {
+      this.NW.insert(b);
+    } else if (b.in(this.quad.NE())) {
+      this.NE.insert(b);
+    } else if (b.in(this.quad.SE())) {
+      this.SE.insert(b);
+    } else if (b.in(this.quad.SW())) {
+      this.SW.insert(b);
+    }
   }
 
   isExternal() {
@@ -56,16 +61,20 @@ export class BHTree {
   }
 
   updateForce(b: Body) {
-    if (this.body == null || b.equals(this.body)) return;
+    if (this.body == null || b === this.body) {
+      return;
+    }
 
-    if (this.isExternal()) b.addForce(this.body);
-    else {
+    if (this.isExternal()) {
+      b.addForce(this.body);
+    } else {
       const s = this.quad.getLength();
 
       const d = this.body.distanceTo(b);
 
-      if (s / d < this.THETA) b.addForce(this.body);
-      else {
+      if (s / d < this.THETA) {
+        b.addForce(this.body);
+      } else {
         this.NW.updateForce(b);
         this.NE.updateForce(b);
         this.SW.updateForce(b);

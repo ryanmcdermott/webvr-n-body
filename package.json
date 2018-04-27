@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "dependencies": {
+    "aframe": "0.8.2"
+  },
   "devDependencies": {
-    "aframe": "0.6.1",
     "autoprefixer": "6.7.7",
     "copy-webpack-plugin": "4.5.1",
     "css-loader": "0.27.3",

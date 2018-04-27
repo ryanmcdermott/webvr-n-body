@@ -50,6 +50,4 @@ export class Quad {
     const len = this.length / 2.0;
     return new Quad(x, y, len);
   }
-
-  render() {}
 }
