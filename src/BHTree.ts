@@ -1,9 +1,8 @@
 import { Quad } from './Quad';
 import { Body } from './Body';
+import { THETA } from './Constants';
 
 export class BHTree {
-  private THETA = 0.5;
-
   private body: Body;
   private quad: Quad;
   private NW: BHTree;
@@ -72,7 +71,7 @@ export class BHTree {
 
       const d = this.body.distanceTo(b);
 
-      if (s / d < this.THETA) {
+      if (s / d < THETA) {
         b.addForce(this.body);
       } else {
         this.NW.updateForce(b);

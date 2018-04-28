@@ -1,7 +1,7 @@
 import { Quad } from './Quad';
+import { GRAVITATIONAL_CONST, EPS } from './Constants';
 
 export class Body {
-  private static G = 6.67e-11; // Newtonian gravitational constant
   private rx: number;
   private ry: number;
   private vx: number;
@@ -49,11 +49,11 @@ export class Body {
   }
 
   addForce(b: Body) {
-    const EPS = 3e4;
     const dx = b.rx - this.rx;
     const dy = b.ry - this.ry;
     const dist = Math.sqrt(dx * dx + dy * dy);
-    const F = Body.G * this.mass * b.mass / (dist * dist + EPS * EPS);
+    const F =
+      GRAVITATIONAL_CONST * this.mass * b.mass / (dist * dist + EPS * EPS);
     this.fx += F * dx / dist;
     this.fy += F * dy / dist;
   }

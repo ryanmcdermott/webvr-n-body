@@ -3,13 +3,9 @@ import 'aframe';
 import { Body } from './Body';
 import { Quad } from './Quad';
 import { BHTree } from './BHTree';
-
+import { DEFAULT_BODY_SIZE, DEFAULT_Z_INDEX, RADIUS, DT } from './Constants';
 import { galaxyTemplate } from './galaxy_data/galaxy1';
 
-const DT = 0.1;
-const DEFAULT_Z_INDEX = -10;
-const DEFAULT_BODY_SIZE = 10000;
-const RADIUS = 2.8e6;
 const bodies = generateBodies();
 console.warn(bodies);
 
