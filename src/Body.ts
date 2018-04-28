@@ -1,5 +1,5 @@
 import { Quad } from './Quad';
-import { GRAVITATIONAL_CONST, EPS } from './Constants';
+import { GRAVITATIONAL_CONST, EPS, DEFAULT_Z_INDEX } from './Constants';
 
 export class Body {
   private rx: number;
@@ -59,7 +59,10 @@ export class Body {
   }
 
   render() {
-    this.element.setAttribute('position', `${this.rx} ${this.ry} -10`);
+    this.element.setAttribute(
+      'position',
+      `${this.rx} ${this.ry} ${DEFAULT_Z_INDEX}`
+    );
   }
 
   in(q: Quad) {

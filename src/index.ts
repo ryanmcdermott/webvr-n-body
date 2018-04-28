@@ -26,7 +26,7 @@ function generateBodies() {
     const vx = b.vx * SCALE_FACTOR;
     const vy = b.vy * SCALE_FACTOR;
     el.setAttribute('color', b.color);
-    el.setAttribute('radius', b.DEFAULT_BODY_SIZE);
+    el.setAttribute('radius', DEFAULT_BODY_SIZE);
     el.setAttribute('position', `${rx} ${ry} ${DEFAULT_Z_INDEX}`);
 
     const scene = document.getElementById('galaxy-scene');
