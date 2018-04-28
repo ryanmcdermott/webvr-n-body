@@ -3,7 +3,13 @@ import 'aframe';
 import { Body } from './Body';
 import { Quad } from './Quad';
 import { BHTree } from './BHTree';
-import { DEFAULT_BODY_SIZE, DEFAULT_Z_INDEX, RADIUS, DT } from './Constants';
+import {
+  DEFAULT_BODY_SIZE,
+  DEFAULT_Z_INDEX,
+  RADIUS,
+  DT,
+  SCALE_FACTOR,
+} from './Constants';
 import { galaxyTemplate } from './galaxy_data/galaxy1';
 
 const bodies = generateBodies();
@@ -15,10 +21,10 @@ function generateBodies() {
     const b = galaxyTemplate[i];
     const el = document.createElement('a-sphere');
 
-    const rx = b.rx;
-    const ry = b.ry;
-    const vx = b.vx;
-    const vy = b.vy;
+    const rx = b.rx * SCALE_FACTOR;
+    const ry = b.ry * SCALE_FACTOR;
+    const vx = b.vx * SCALE_FACTOR;
+    const vy = b.vy * SCALE_FACTOR;
     el.setAttribute('color', b.color);
     el.setAttribute('radius', b.DEFAULT_BODY_SIZE);
     el.setAttribute('position', `${rx} ${ry} ${DEFAULT_Z_INDEX}`);
