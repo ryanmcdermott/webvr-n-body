@@ -23,8 +23,8 @@ function generateBodies() {
 
     const rx = b.rx * SCALE_FACTOR;
     const ry = b.ry * SCALE_FACTOR;
-    const vx = b.vx * 0.0009;
-    const vy = b.vy * 0.004;
+    const vx = b.vx * 0.00095;
+    const vy = b.vy * 0.0031;
     el.setAttribute('color', b.color);
     el.setAttribute('radius', DEFAULT_BODY_SIZE);
     el.setAttribute('position', `${rx} ${ry} ${DEFAULT_Z_INDEX}`);
