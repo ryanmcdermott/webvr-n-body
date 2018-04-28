@@ -13,7 +13,6 @@ import {
 import { galaxyTemplate } from './galaxy_data/galaxy1';
 
 const bodies = generateBodies();
-console.warn(bodies);
 
 function generateBodies() {
   const arr = [];

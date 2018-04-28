@@ -1,5 +1,5 @@
 {
-  "name": "webvr-galaxy",
+  "name": "webvr-n-body",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -26,6 +26,6 @@
   },
   "scripts": {
     "start": "webpack-dev-server --hot --inline --host 0.0.0.0",
-    "build": "rm -rf dist && webpack"
+    "build": "rm -rf docs && webpack"
   }
 }
